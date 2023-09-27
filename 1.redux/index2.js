@@ -1,6 +1,6 @@
 const { createStore } = require('redux')
 
-// reducer(객체를 생성해서 대체해주는 놈)
+// reducer
 const reducer = (prevState, action) => {
   switch (action.type) {
     case 'LOG_IN':
@@ -29,10 +29,10 @@ const initialState = {
   posts: [],
 }
 
-// store(reducer과 initial state를 받는다.)
+// store
 const store = createStore(reducer, initialState)
 
-// actions(+action creator)
+// actions(action creator)
 const logIn = data => {
   return {
     type: 'LOG_IN',
@@ -53,7 +53,7 @@ const addPost = data => {
   }
 }
 
-// dispatch(사용)
+// dispatch
 store.dispatch(
   logIn({
     id: 1,
@@ -72,7 +72,7 @@ store.dispatch(
 )
 console.log(store.getState())
 
-store.dispatch(addPost({ userId: 2, id: 2, content: '과연 내가 강병현일까?!' }))
+store.dispatch(addPost({ userId: 2, id: 2, content: '2번째 컨텐츠' }))
 console.log(store.getState())
 
 store.dispatch(logOut())
