@@ -42,30 +42,5 @@ const enhancer = compose(applyMiddleware(firstMiddleware, thunkMiddleware))
 // store
 const store = createStore(reducer, initialState, enhancer)
 
-// dispatch
-// store.dispatch(
-//   logIn({
-//     id: 1,
-//     name: '강병현',
-//     admin: true,
-//   })
-// )
-// console.log(store.getState())
-
-// store.dispatch(
-//   addPost({
-//     userId: 1,
-//     id: 1,
-//     content: '안녕하세요. 강병현 입니다.',
-//   })
-// )
-// console.log(store.getState())
-
-// store.dispatch(addPost({ userId: 2, id: 2, content: '2번째 컨텐츠' }))
-// console.log(store.getState())
-
-// store.dispatch(logOut())
-// console.log(store.getState())
-
 store.dispatch(logIn({ id: 1, name: 'kangbyeonghyeon', admin: true }))
 console.log(store.getState())
